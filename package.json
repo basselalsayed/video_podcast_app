@@ -14,7 +14,8 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-keyboard-navigation": "^0.0.3",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "rss-parser": "^3.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

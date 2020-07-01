@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import getRss from './api';
+import { newRss } from './api';
 import { Header } from './Components';
 
 function App() {
@@ -11,9 +11,9 @@ function App() {
   const rssHandler = async () => {
     setLoading(true);
 
-    const response = await getRss();
+    const response = await newRss();
 
-    console.log('res.data:', response.data);
+    console.log('res.data:', response);
     setLoading(false);
   };
 
