@@ -4,9 +4,11 @@ import './App.css';
 
 import { newRss } from './api';
 import { Header } from './Components';
+import { Button } from 'react-bootstrap';
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [feed, setFeed] = useState({});
 
   const rssHandler = async () => {
     setLoading(true);
@@ -14,29 +16,19 @@ function App() {
     const response = await newRss();
 
     console.log('res.data:', response);
+    setFeed(response);
     setLoading(false);
   };
 
   return (
     <div className='App'>
-      <Header />
+      <Header
+        title={feed.title || 'Welcome'}
+        description={feed.description || 'Lorem Ipsum'}
+      />
       <p>{`${loading}`}</p>
 
-      <header className='App-header'>
-        <button onClick={rssHandler}>Get Rss</button>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+      <Button onClick={rssHandler}>Update Feed</Button>
     </div>
   );
 }
