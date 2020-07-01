@@ -4,7 +4,7 @@ import './App.css';
 
 import { newRss } from './api';
 import { Header, Feeds } from './Components';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ function App() {
         title={feed.title || 'Welcome'}
         description={feed.description || 'Lorem Ipsum'}
       />
-      <p>{`${loading}`}</p>
+      {loading ? <Spinner animation='border' /> : 'Loaded'}
 
       <Button onClick={rssHandler}>Update Feed</Button>
       <Feeds feeds={feed.items} />
