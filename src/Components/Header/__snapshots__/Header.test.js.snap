@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders 1`] = `
+<Fragment>
+  <Navbar
+    collapseOnSelect={false}
+    expand={true}
+    variant="light"
+  >
+    <NavbarBrand>
+      <p>
+        Test Title
+      </p>
+    </NavbarBrand>
+    <NavbarToggle
+      label="Toggle navigation"
+    />
+    <NavbarCollapse
+      className="justify-content-end"
+    >
+      <NavbarText>
+        Example
+      </NavbarText>
+    </NavbarCollapse>
+  </Navbar>
+  <h3>
+    A test description
+  </h3>
+</Fragment>
+`;
