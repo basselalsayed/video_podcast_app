@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders 1`] = `
+<div
+  className="App"
+>
+  <Header
+    description="Lorem Ipsum"
+    title="Welcome"
+  />
+  <p>
+    false
+  </p>
+  <Button
+    active={false}
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+    variant="primary"
+  >
+    Update Feed
+  </Button>
+</div>
+`;

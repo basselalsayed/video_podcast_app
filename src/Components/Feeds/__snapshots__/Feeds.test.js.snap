@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Feeds /> renders 1`] = `
+<ListGroup
+  horizontal={null}
+  variant={null}
+>
+  <Feed
+    feed={0}
+    key="0"
+  />
+  <Feed
+    feed={1}
+    key="1"
+  />
+  <Feed
+    feed={2}
+    key="2"
+  />
+  <Feed
+    feed={3}
+    key="3"
+  />
+</ListGroup>
+`;
