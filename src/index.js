@@ -7,9 +7,7 @@ import { NavigationProvider } from 'react-keyboard-navigation';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavigationProvider>
-      <App />
-    </NavigationProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
