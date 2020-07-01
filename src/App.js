@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 
 import { newRss } from './api';
-import { Header } from './Components';
+import { Header, Feeds } from './Components';
 import { Button } from 'react-bootstrap';
 
 function App() {
@@ -20,6 +20,10 @@ function App() {
     setLoading(false);
   };
 
+  useEffect(() => {
+    rssHandler();
+  }, []);
+
   return (
     <div className='App'>
       <Header
@@ -29,6 +33,7 @@ function App() {
       <p>{`${loading}`}</p>
 
       <Button onClick={rssHandler}>Update Feed</Button>
+      <Feeds feeds={feed.items} />
     </div>
   );
 }
