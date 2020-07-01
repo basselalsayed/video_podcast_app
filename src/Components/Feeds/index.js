@@ -5,7 +5,8 @@ import { ListGroup } from 'react-bootstrap';
 import { Feed } from '../';
 
 const Feeds = ({ feeds }) => {
-  const feedMap = feeds.map((feed, idx) => <Feed key={idx} feed={feed} />);
+  const feedMap =
+    feeds && feeds.map((feed, idx) => <Feed key={idx} feed={feed} />);
 
   return <ListGroup>{feedMap}</ListGroup>;
 };
