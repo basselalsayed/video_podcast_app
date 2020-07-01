@@ -7,7 +7,7 @@ import './Feed.css';
 
 const Feed = ({ feed }) => (
   <ListGroupItem action href='#link1'>
-    <Card>
+    <Card className='feed'>
       <Card.Body>
         <HoverVideoPlayer
           className='vid-thumb'

@@ -15,7 +15,6 @@ function App() {
 
     const response = await newRss();
 
-    console.log('res.data:', response);
     setFeed(response);
     setLoading(false);
   };
