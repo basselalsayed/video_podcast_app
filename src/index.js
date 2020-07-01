@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { NavigationProvider } from 'react-keyboard-navigation';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NavigationProvider>
+      <App />
+    </NavigationProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
