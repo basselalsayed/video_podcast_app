@@ -15,6 +15,7 @@
     "react-dom": "^16.13.1",
     "react-hover-video-player": "^6.6.2",
     "react-keyboard-navigation": "^0.0.3",
+    "react-player": "^2.4.0",
     "react-scripts": "3.4.1",
     "rss-parser": "^3.8.0"
   },
