@@ -18,18 +18,15 @@ describe('<Header />', () => {
 
   it('has correct inner text', () => {
     expect(
-      wrapper.containsMatchingElement(<p>{defaultProps.title}</p>),
-    ).toEqual(true);
-    expect(
-      wrapper.containsMatchingElement(<h3>{defaultProps.description}</h3>),
+      wrapper.containsAllMatchingElements([
+        <p>{defaultProps.title}</p>,
+        <h3>{defaultProps.description}</h3>,
+      ]),
     ).toEqual(true);
   });
 
   it('calls the reset spy onClick', () => {
-    const wrapper = mount(<Header {...defaultProps} />);
-
-    wrapper.find('#refresh-rss').at(0).simulate('click');
-
+    wrapper.find('#refresh-rss').simulate('click');
     expect(rssHandler.mock.calls.length).toEqual(1);
   });
 });
