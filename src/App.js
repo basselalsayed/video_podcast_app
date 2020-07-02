@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-import './App.css';
+import classes, { column, row } from './App.module.css';
 
 import { newRss } from './api';
 import { Header, Feeds, Video } from './Components';
 import { Button, Spinner } from 'react-bootstrap';
 import { VideoContext } from './Components/Video/context';
+import withClass from './hoc/withClass';
 
-function App() {
+const App = () => {
   const [loading, setLoading] = useState(false);
   const [feed, setFeed] = useState({});
   const [nowPlaying, setNowPlaying] = useState(
@@ -29,24 +30,25 @@ function App() {
 
   return (
     <VideoContext.Provider value={{ nowPlaying, setNowPlaying }}>
-      <div className='App'>
-        <Header
-          title={feed.title || 'Welcome'}
-          description={feed.description || 'Lorem Ipsum'}
-        />
-        {loading && <Spinner animation='border' />}
-        <Button onClick={rssHandler}>Update Feed</Button>
-        <div className='row'>
-          <div className='column'>
+      <Header
+        title={feed.title || 'Welcome'}
+        description={feed.description || 'Lorem Ipsum'}
+      />
+      <Button onClick={rssHandler}>Update Feed</Button>
+      {loading ? (
+        <Spinner animation='border' />
+      ) : (
+        <div className={row}>
+          <div className={column}>
             <Feeds feeds={feed.items} />
           </div>
-          <div className='column'>
+          <div className={column}>
             <Video />
           </div>
         </div>
-      </div>
+      )}
     </VideoContext.Provider>
   );
-}
+};
 
-export default App;
+export default withClass(App, classes.App);

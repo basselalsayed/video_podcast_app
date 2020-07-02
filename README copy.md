@@ -11,7 +11,13 @@ Planning and dependency decision:
 1. With setup out of the way I had to ensure data was being received to the client upon RSS request.
    1. Achieved using an easy to use proxy for now (with more time I could have forked my own copy to host or looked at alternatives such as nginx): https://cors-anywhere.herokuapp.com/
    2. Extracted API call to seperate file for future mocking
+   3. Using RssParser to hold response at top level app state and distribute to children
+   4. later implemented this method in useEffect
 2. Installed react-bootstrap - it is my current go-to for fast react development
 3. Looked at implementing keyboard shortcuts from the start as something tells me retrofitting would be painful
    1. Found an easy to use library using HOC logic (which I like): https://github.com/Orange-OpenSource/react-keyboard-navigation
    2. Played with until I was happy it could provide what I need
+4. Feeds & feed components created.
+   1. Found dependency for video thumbnails that play onHover, unfortunately they broke the tests and after much wrestling with jest/babel and modifying the dependency I have left them broken as I think it is a cra issue but they work fine in the browser. Online answers suggest a more recent version of Node offers functionality to explicitly declare dependencies as modules but unable to upgrade without ejecting cra.
+5. Context seemed the easiest way to implement the static Video container, found a versatile dependency react-player with keyboard navigation out the box and decent ui
+6. Some cleanup and refactorng, turned css modular

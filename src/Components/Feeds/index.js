@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ListGroup } from 'react-bootstrap';
-import { Feed } from '../';
+import Feed from './Feed';
 
-const Feeds = ({ feeds }) => {
-  const feedMap =
-    feeds && feeds.map((feed, idx) => <Feed key={idx} feed={feed} />);
-
-  return <ListGroup>{feedMap}</ListGroup>;
-};
+const Feeds = ({ feeds }) => (
+  <ListGroup>
+    {feeds && feeds.map((feed, idx) => <Feed key={idx} feed={feed} />)}
+  </ListGroup>
+);
 
 Feeds.propTypes = {
   feeds: PropTypes.array.isRequired,
