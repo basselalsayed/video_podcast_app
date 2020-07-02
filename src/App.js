@@ -4,7 +4,7 @@ import classes, { column, row } from './App.module.css';
 
 import { newRss } from './api';
 import { Header, Feeds, Video } from './Components';
-import { Button, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { VideoContext } from './Components/Video/context';
 import withClass from './hoc/withClass';
 
@@ -33,8 +33,8 @@ const App = () => {
       <Header
         title={feed.title || 'Welcome'}
         description={feed.description || 'Lorem Ipsum'}
+        rssHandler={rssHandler}
       />
-      <Button onClick={rssHandler}>Update Feed</Button>
       {loading ? (
         <Spinner animation='border' />
       ) : (

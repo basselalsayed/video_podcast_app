@@ -18,9 +18,16 @@ exports[`<Header /> renders 1`] = `
     <NavbarCollapse
       className="justify-content-end"
     >
-      <NavbarText>
-        Example
-      </NavbarText>
+      <Button
+        active={false}
+        disabled={false}
+        id="refresh-rss"
+        onClick={[MockFunction]}
+        type="button"
+        variant="primary"
+      >
+        Update Feed
+      </Button>
     </NavbarCollapse>
   </Navbar>
   <h3>

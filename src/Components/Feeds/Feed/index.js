@@ -25,6 +25,7 @@ const Feed = ({ feed: { title, link, pubDate } }) => {
     </ListGroupItem>
   );
 };
+
 Feed.propTypes = {
   feed: PropTypes.object.isRequired,
 };
