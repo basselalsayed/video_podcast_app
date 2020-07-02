@@ -66,20 +66,18 @@ const App = ({
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    loadingRedux: state.loading,
-    feedRedux: state.feed,
-    nowPlayingRedux: state.nowPlaying,
-  };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-    setLoadingRedux: loading =>
-      dispatch({ type: 'SET_LOADING', payload: { loading } }),
-    setFeedRedux: feed => dispatch({ type: 'SET_FEED', payload: { feed } }),
-  };
-};
+const mapStateToProps = state => ({
+  loadingRedux: state.loading,
+  feedRedux: state.feed,
+  nowPlayingRedux: state.nowPlaying,
+});
+
+const mapDispatchToProps = dispatch => ({
+  setLoadingRedux: loading =>
+    dispatch({ type: 'SET_LOADING', payload: { loading } }),
+  setFeedRedux: feed => dispatch({ type: 'SET_FEED', payload: { feed } }),
+});
 
 const StyledApp = withClass(App, classes.App);
+
 export default connect(mapStateToProps, mapDispatchToProps)(StyledApp);

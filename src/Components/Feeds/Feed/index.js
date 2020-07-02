@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
 import HoverVideoPlayer from 'react-hover-video-player';
 
@@ -6,11 +8,11 @@ import { ListGroupItem, Card, Spinner } from 'react-bootstrap';
 import { VideoContext } from '../../Video/context';
 import { feed, vidThumb } from './Feed.module.css';
 
-const Feed = ({ feed: { title, link, pubDate } }) => {
+const Feed = ({ feed: { title, link, pubDate }, setNowPlayingRedux }) => {
   const { setNowPlaying } = useContext(VideoContext);
 
   return (
-    <ListGroupItem action onClick={() => setNowPlaying(link)}>
+    <ListGroupItem action onClick={() => setNowPlayingRedux(link)}>
       <Card className={feed}>
         <Card.Title>{title}</Card.Title>
         <Card.Body>
@@ -30,4 +32,9 @@ Feed.propTypes = {
   feed: PropTypes.object.isRequired,
 };
 
-export default Feed;
+const mapDispatchToProps = dispatch => ({
+  setNowPlayingRedux: nowPlaying =>
+    dispatch({ type: 'SET_NOW_PLAYING', payload: { nowPlaying } }),
+});
+
+export default connect(null, mapDispatchToProps)(Feed);
