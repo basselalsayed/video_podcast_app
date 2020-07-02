@@ -1,81 +1,61 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import classes, { column, row } from './App.module.css';
 
 import { newRss } from './api';
 import { Header, Feeds, Video } from './Components';
 import { Spinner } from 'react-bootstrap';
-import { VideoContext } from './Components/Video/context';
+
 import withClass from './hoc/withClass';
 
-const App = ({
-  loadingRedux,
-  feedRedux,
-  nowPlayingRedux,
-  setLoadingRedux,
-  setFeedRedux,
-}) => {
-  // const [loading, setLoading] = useState(false);
-  // const [feed, setFeed] = useState({});
-  const [nowPlaying, setNowPlaying] = useState(
-    'http://pmd.cdn.turner.com/cnn/big/cnn10/2020/06/13/ten-0615.cnn_3275653_ios_1240.mp4',
-  );
-
-  // const rssHandler = async () => {
-  //   setLoading(true);
-
-  //   const response = await newRss();
-
-  //   setFeed(response);
-  //   setLoading(false);
-  // };
-
-  const rssHandlerRedux = async () => {
-    setLoadingRedux(true);
+const App = ({ feed, loading, nowPlaying, setFeed, setLoading }) => {
+  const rssHandler = async () => {
+    setLoading(true);
 
     const response = await newRss();
+    console.log('response', response);
 
-    setFeedRedux(response);
-    setLoadingRedux(false);
+    setFeed(response);
+    setLoading(false);
   };
 
   useEffect(() => {
-    rssHandlerRedux();
+    rssHandler();
   }, []);
 
   return (
-    <VideoContext.Provider value={{ nowPlaying, setNowPlaying }}>
+    <>
       <Header
-        title={feedRedux.title || 'Welcome'}
-        description={feedRedux.description || 'Lorem Ipsum'}
-        rssHandler={rssHandlerRedux}
+        title={feed.title || 'Welcome'}
+        description={feed.description || 'Lorem Ipsum'}
+        rssHandler={rssHandler}
       />
-      {loadingRedux ? (
+      {loading ? (
         <Spinner animation='border' />
       ) : (
         <div className={row}>
           <div className={column}>
-            <Feeds feeds={feedRedux.items} />
+            <Feeds feeds={feed.items} />
           </div>
           <div className={column}>
             <Video />
           </div>
         </div>
       )}
-    </VideoContext.Provider>
+    </>
   );
 };
 
 const mapStateToProps = state => ({
-  loadingRedux: state.loading,
-  feedRedux: state.feed,
-  nowPlayingRedux: state.nowPlaying,
+  loading: state.loading,
+  feed: state.feed,
+  nowPlaying: state.nowPlaying,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setLoadingRedux: loading =>
+  setLoading: loading =>
     dispatch({ type: 'SET_LOADING', payload: { loading } }),
-  setFeedRedux: feed => dispatch({ type: 'SET_FEED', payload: { feed } }),
+  setFeed: feed => dispatch({ type: 'SET_FEED', payload: { feed } }),
 });
 
 const StyledApp = withClass(App, classes.App);

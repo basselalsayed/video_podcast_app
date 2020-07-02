@@ -6,7 +6,8 @@ import Feed from './Feed';
 
 const Feeds = ({ feeds }) => (
   <ListGroup>
-    {feeds && feeds.map((feed, idx) => <Feed key={idx} feed={feed} />)}
+    {feeds &&
+      feeds.map((feed, idx) => <Feed key={idx} idx={idx} feed={feed} />)}
   </ListGroup>
 );
 

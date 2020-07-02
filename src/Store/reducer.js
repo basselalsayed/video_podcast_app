@@ -1,9 +1,8 @@
 const initialState = {
   feed: [],
   loading: false,
-  nowPlaying: '',
+  nowPlaying: {},
 };
-// Reducer
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,7 +19,7 @@ const rootReducer = (state = initialState, action) => {
     case 'SET_NOW_PLAYING':
       return {
         ...state,
-        ...action.payload,
+        nowPlaying: state.feed.items[action.idx],
       };
     default:
       return state;

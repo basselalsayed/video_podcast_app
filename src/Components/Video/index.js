@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+
 import ReactPlayer from 'react-player/lazy';
-import { VideoContext } from './context';
 
-const Video = () => {
-  const { nowPlaying } = useContext(VideoContext);
-
-  return <ReactPlayer url={nowPlaying} controls />;
+const VideoBase = ({ nowPlaying: { link } }) => {
+  return <ReactPlayer url={link} controls />;
 };
+
+const mapStateToProps = state => ({
+  nowPlaying: state.nowPlaying,
+});
+
+const Video = connect(mapStateToProps)(VideoBase);
 
 export { Video };
