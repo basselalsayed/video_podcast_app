@@ -1,4 +1,3 @@
-import axios from 'axios';
 let Parser = require('rss-parser');
 let parser = new Parser();
 
@@ -8,21 +7,12 @@ const FULL_URL = CORS_PROXY + CNN_RSS;
 
 const getRss = async () => {
   try {
-    const response = await axios.get(CORS_PROXY + CNN_RSS);
-
-    return response;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const newRss = async () => {
-  try {
     let feed = await parser.parseURL(FULL_URL);
 
     return feed;
   } catch (error) {
+    alert('Please try again later.');
     console.log(error);
   }
 };
-export { getRss, newRss };
+export { getRss };

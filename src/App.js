@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import classes, { column, row } from './App.module.css';
 
-import { newRss } from './api';
+import { getRss } from './api';
 import { Header, Feeds, Video } from './Components';
 import { Spinner } from 'react-bootstrap';
 
 import withClass from './hoc/withClass';
 
-const App = ({ feed, loading, nowPlaying, setFeed, setLoading }) => {
+const App = ({ feed, loading, setFeed, setLoading }) => {
   const rssHandler = async () => {
     setLoading(true);
 
-    const response = await newRss();
+    const response = await getRss();
     console.log('response', response);
 
     setFeed(response);

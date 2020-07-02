@@ -1,3 +1,5 @@
+import parseVideoContent from './helpers';
+
 const initialState = {
   feed: [],
   loading: false,
@@ -17,9 +19,10 @@ const rootReducer = (state = initialState, action) => {
         ...action.payload,
       };
     case 'SET_NOW_PLAYING':
+      const nowPlaying = state.feed.items[action.idx];
       return {
         ...state,
-        nowPlaying: state.feed.items[action.idx],
+        nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
       };
     default:
       return state;
