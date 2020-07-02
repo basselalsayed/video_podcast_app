@@ -22,3 +22,5 @@ Planning and dependency decision:
 5. Context seemed the easiest way to implement the Video feature, found a versatile dependency react-player with keyboard navigation out the box and decent ui
 6. Some cleanup and refactorng, turned css modular
 7. Implemented the context hook for each Feed Item to change the main video
+8. Implemented redux because of the way the feed data is structured, continuing with context the way I started would've worked too but this way there is no prop drilling, things are better seperated and the components are lighter.
+9.
