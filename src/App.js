@@ -35,7 +35,7 @@ const App = ({ feed, loading, setFeed, setLoading }) => {
       ) : (
         <div className={row}>
           <div className={column}>
-            <Feeds feeds={feed.items} />
+            <Feeds />
           </div>
           <div className={column}>
             <Video />

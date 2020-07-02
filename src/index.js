@@ -7,7 +7,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './Store/reducer';
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer /* preloadedState, */,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
   <React.StrictMode>
