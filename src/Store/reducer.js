@@ -2,6 +2,7 @@ import { parseVideoContent, splitFeed } from './helpers';
 
 const initialState = {
   currentFeeds: [],
+  disabled: false,
   feed: [],
   loading: false,
   nowPlaying: {},
@@ -10,6 +11,8 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
+  const disabled = state.visibleFeeds === (0 || state.splitFeeds.length - 1);
+
   switch (action.type) {
     case 'SET_FEED':
       const splitFeeds = splitFeed(action.payload.feed.items);
@@ -37,6 +40,7 @@ const rootReducer = (state = initialState, action) => {
           : state.visibleFeeds + 1;
       return {
         ...state,
+        disabled,
         visibleFeeds,
         currentFeeds: state.splitFeeds[visibleFeeds],
       };
@@ -46,6 +50,7 @@ const rootReducer = (state = initialState, action) => {
         state.visibleFeeds === 0 ? state.visibleFeeds : state.visibleFeeds - 1;
       return {
         ...state,
+        disabled,
         visibleFeeds,
         currentFeeds: state.splitFeeds[visibleFeeds],
       };

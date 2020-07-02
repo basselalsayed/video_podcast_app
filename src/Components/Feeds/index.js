@@ -8,13 +8,13 @@ import Feed from './Feed';
 const FeedsBase = ({
   currentFeeds,
   decVisibleFeeds,
+  disabled,
   incVisibleFeeds,
-  visibleFeeds,
 }) => (
   <>
     <Button
       children='&#9650;'
-      disabled={visibleFeeds === 0}
+      disabled={disabled}
       id='scroll-up'
       onClick={decVisibleFeeds}
     />
@@ -26,7 +26,7 @@ const FeedsBase = ({
     </ListGroup>
     <Button
       children='&#9660;'
-      disabled={currentFeeds.length < 4}
+      disabled={disabled}
       id='scroll-down'
       onClick={incVisibleFeeds}
     />
@@ -35,7 +35,7 @@ const FeedsBase = ({
 
 const mapStateToProps = state => ({
   currentFeeds: state.currentFeeds,
-  visibleFeeds: state.visibleFeeds,
+  disabled: state.disabled,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -49,7 +49,7 @@ export { Feeds };
 
 FeedsBase.propTypes = {
   currentFeeds: PropTypes.array.isRequired,
-  incVisibleFeeds: PropTypes.func.isRequired,
   decVisibleFeeds: PropTypes.func.isRequired,
-  visibleFeeds: PropTypes.number.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  incVisibleFeeds: PropTypes.func.isRequired,
 };
