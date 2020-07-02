@@ -21,6 +21,7 @@ const rootReducer = (state = initialState, action) => {
     disabled,
     visibleFeeds,
   };
+
   switch (action.type) {
     case 'SET_FEED':
       let splitFeeds = splitFeed(action.payload.feed.items);
@@ -30,17 +31,20 @@ const rootReducer = (state = initialState, action) => {
         currentFeeds: splitFeeds[state.visibleFeeds],
         splitFeeds,
       };
+
     case 'SET_LOADING':
       return {
         ...state,
         ...action.payload,
       };
+
     case 'SET_NOW_PLAYING':
       const nowPlaying = state.currentFeeds[action.idx];
       return {
         ...state,
         nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
       };
+
     case 'INC_VISIBLE_FEEDS':
       visibleFeeds =
         state.visibleFeeds === state.splitFeeds.length - 1

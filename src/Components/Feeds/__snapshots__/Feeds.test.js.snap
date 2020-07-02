@@ -1,0 +1,885 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Feeds /> renders 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [MockFunction],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(FeedsBase)>
+    <FeedsBase
+      currentFeeds={
+        Array [
+          Object {
+            "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+            "pubDate": 2,
+            "title": "test 1",
+          },
+          Object {
+            "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+            "pubDate": 2,
+            "title": "test 2",
+          },
+          Object {
+            "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+            "pubDate": 2,
+            "title": "test 3",
+          },
+          Object {
+            "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+            "pubDate": 2,
+            "title": "test 4",
+          },
+        ]
+      }
+      decVisibleFeeds={[Function]}
+      disabled={false}
+      incVisibleFeeds={[Function]}
+    >
+      <Button
+        active={false}
+        disabled={false}
+        id="scroll-up"
+        onClick={[Function]}
+        type="button"
+        variant="primary"
+      >
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          id="scroll-up"
+          onClick={[Function]}
+          type="button"
+        >
+          ▲
+        </button>
+      </Button>
+      <ListGroup
+        horizontal={null}
+        variant={null}
+      >
+        <ForwardRef
+          as="div"
+          className="list-group"
+          onSelect={[Function]}
+        >
+          <div
+            className="list-group"
+            onKeyDown={[Function]}
+          >
+            <Connect(Feed)
+              feed={
+                Object {
+                  "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                  "pubDate": 2,
+                  "title": "test 1",
+                }
+              }
+              idx={0}
+              key="0"
+            >
+              <Feed
+                feed={
+                  Object {
+                    "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                    "pubDate": 2,
+                    "title": "test 1",
+                  }
+                }
+                idx={0}
+                setNowPlayingRedux={[Function]}
+              >
+                <ListGroupItem
+                  action={true}
+                  active={false}
+                  disabled={false}
+                  onClick={[Function]}
+                  variant={null}
+                >
+                  <ForwardRef
+                    as="button"
+                    className="list-group-item list-group-item-action"
+                    disabled={false}
+                    eventKey={null}
+                    onClick={[Function]}
+                  >
+                    <button
+                      className="list-group-item list-group-item-action"
+                      data-rb-event-key={null}
+                      disabled={false}
+                      onClick={[Function]}
+                    >
+                      <Card
+                        body={false}
+                        className="feed"
+                      >
+                        <div
+                          className="feed card"
+                        >
+                          <CardTitle>
+                            <ForwardRef
+                              className="card-title"
+                            >
+                              <div
+                                className="card-title h5"
+                              >
+                                test 1
+                              </div>
+                            </ForwardRef>
+                          </CardTitle>
+                          <CardBody>
+                            <div
+                              className="card-body"
+                            >
+                              <div>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={true}
+                                  preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={true}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={false}
+                                  preview="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={false}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                              </div>
+                            </div>
+                          </CardBody>
+                          <CardFooter>
+                            <div
+                              className="card-footer"
+                            >
+                              2
+                            </div>
+                          </CardFooter>
+                        </div>
+                      </Card>
+                    </button>
+                  </ForwardRef>
+                </ListGroupItem>
+              </Feed>
+            </Connect(Feed)>
+            <Connect(Feed)
+              feed={
+                Object {
+                  "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                  "pubDate": 2,
+                  "title": "test 2",
+                }
+              }
+              idx={1}
+              key="1"
+            >
+              <Feed
+                feed={
+                  Object {
+                    "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                    "pubDate": 2,
+                    "title": "test 2",
+                  }
+                }
+                idx={1}
+                setNowPlayingRedux={[Function]}
+              >
+                <ListGroupItem
+                  action={true}
+                  active={false}
+                  disabled={false}
+                  onClick={[Function]}
+                  variant={null}
+                >
+                  <ForwardRef
+                    as="button"
+                    className="list-group-item list-group-item-action"
+                    disabled={false}
+                    eventKey={null}
+                    onClick={[Function]}
+                  >
+                    <button
+                      className="list-group-item list-group-item-action"
+                      data-rb-event-key={null}
+                      disabled={false}
+                      onClick={[Function]}
+                    >
+                      <Card
+                        body={false}
+                        className="feed"
+                      >
+                        <div
+                          className="feed card"
+                        >
+                          <CardTitle>
+                            <ForwardRef
+                              className="card-title"
+                            >
+                              <div
+                                className="card-title h5"
+                              >
+                                test 2
+                              </div>
+                            </ForwardRef>
+                          </CardTitle>
+                          <CardBody>
+                            <div
+                              className="card-body"
+                            >
+                              <div>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={true}
+                                  preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={true}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={false}
+                                  preview="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={false}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                              </div>
+                            </div>
+                          </CardBody>
+                          <CardFooter>
+                            <div
+                              className="card-footer"
+                            >
+                              2
+                            </div>
+                          </CardFooter>
+                        </div>
+                      </Card>
+                    </button>
+                  </ForwardRef>
+                </ListGroupItem>
+              </Feed>
+            </Connect(Feed)>
+            <Connect(Feed)
+              feed={
+                Object {
+                  "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                  "pubDate": 2,
+                  "title": "test 3",
+                }
+              }
+              idx={2}
+              key="2"
+            >
+              <Feed
+                feed={
+                  Object {
+                    "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                    "pubDate": 2,
+                    "title": "test 3",
+                  }
+                }
+                idx={2}
+                setNowPlayingRedux={[Function]}
+              >
+                <ListGroupItem
+                  action={true}
+                  active={false}
+                  disabled={false}
+                  onClick={[Function]}
+                  variant={null}
+                >
+                  <ForwardRef
+                    as="button"
+                    className="list-group-item list-group-item-action"
+                    disabled={false}
+                    eventKey={null}
+                    onClick={[Function]}
+                  >
+                    <button
+                      className="list-group-item list-group-item-action"
+                      data-rb-event-key={null}
+                      disabled={false}
+                      onClick={[Function]}
+                    >
+                      <Card
+                        body={false}
+                        className="feed"
+                      >
+                        <div
+                          className="feed card"
+                        >
+                          <CardTitle>
+                            <ForwardRef
+                              className="card-title"
+                            >
+                              <div
+                                className="card-title h5"
+                              >
+                                test 3
+                              </div>
+                            </ForwardRef>
+                          </CardTitle>
+                          <CardBody>
+                            <div
+                              className="card-body"
+                            >
+                              <div>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={true}
+                                  preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={true}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={false}
+                                  preview="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={false}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                              </div>
+                            </div>
+                          </CardBody>
+                          <CardFooter>
+                            <div
+                              className="card-footer"
+                            >
+                              2
+                            </div>
+                          </CardFooter>
+                        </div>
+                      </Card>
+                    </button>
+                  </ForwardRef>
+                </ListGroupItem>
+              </Feed>
+            </Connect(Feed)>
+            <Connect(Feed)
+              feed={
+                Object {
+                  "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                  "pubDate": 2,
+                  "title": "test 4",
+                }
+              }
+              idx={3}
+              key="3"
+            >
+              <Feed
+                feed={
+                  Object {
+                    "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+                    "pubDate": 2,
+                    "title": "test 4",
+                  }
+                }
+                idx={3}
+                setNowPlayingRedux={[Function]}
+              >
+                <ListGroupItem
+                  action={true}
+                  active={false}
+                  disabled={false}
+                  onClick={[Function]}
+                  variant={null}
+                >
+                  <ForwardRef
+                    as="button"
+                    className="list-group-item list-group-item-action"
+                    disabled={false}
+                    eventKey={null}
+                    onClick={[Function]}
+                  >
+                    <button
+                      className="list-group-item list-group-item-action"
+                      data-rb-event-key={null}
+                      disabled={false}
+                      onClick={[Function]}
+                    >
+                      <Card
+                        body={false}
+                        className="feed"
+                      >
+                        <div
+                          className="feed card"
+                        >
+                          <CardTitle>
+                            <ForwardRef
+                              className="card-title"
+                            >
+                              <div
+                                className="card-title h5"
+                              >
+                                test 4
+                              </div>
+                            </ForwardRef>
+                          </CardTitle>
+                          <CardBody>
+                            <div
+                              className="card-body"
+                            >
+                              <div>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={true}
+                                  preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={true}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                                <VideoThumbnail
+                                  badge="Live"
+                                  classname=""
+                                  message="2M Watching Now"
+                                  muted={false}
+                                  preview="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                  title="Hi, this is a test title"
+                                  width={350}
+                                >
+                                  <div
+                                    className="styles_videoThumbnail__1A0YX "
+                                    style={
+                                      Object {
+                                        "width": 350,
+                                      }
+                                    }
+                                  >
+                                    <div
+                                      className="styles_video__fdeKk"
+                                      style={
+                                        Object {
+                                          "width": 350,
+                                        }
+                                      }
+                                    >
+                                      <video
+                                        className="styles_preview__2cXKK"
+                                        loop={true}
+                                        muted={false}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                        src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                                        width={350}
+                                      />
+                                      <div
+                                        className="styles_badge__3dxZ6"
+                                        style={
+                                          Object {
+                                            "background": undefined,
+                                          }
+                                        }
+                                      >
+                                        Live
+                                      </div>
+                                    </div>
+                                    <h4
+                                      className="styles_title__1cca0"
+                                    >
+                                      Hi, this is a test title
+                                    </h4>
+                                    <span
+                                      className="styles_views__2l1fl"
+                                    >
+                                      2M Watching Now
+                                    </span>
+                                  </div>
+                                </VideoThumbnail>
+                              </div>
+                            </div>
+                          </CardBody>
+                          <CardFooter>
+                            <div
+                              className="card-footer"
+                            >
+                              2
+                            </div>
+                          </CardFooter>
+                        </div>
+                      </Card>
+                    </button>
+                  </ForwardRef>
+                </ListGroupItem>
+              </Feed>
+            </Connect(Feed)>
+          </div>
+        </ForwardRef>
+      </ListGroup>
+      <Button
+        active={false}
+        disabled={false}
+        id="scroll-down"
+        onClick={[Function]}
+        type="button"
+        variant="primary"
+      >
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          id="scroll-down"
+          onClick={[Function]}
+          type="button"
+        >
+          ▼
+        </button>
+      </Button>
+    </FeedsBase>
+  </Connect(FeedsBase)>
+</Provider>
+`;
