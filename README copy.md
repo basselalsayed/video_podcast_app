@@ -19,5 +19,6 @@ Planning and dependency decision:
    2. Played with until I was happy it could provide what I need
 4. Feeds & feed components created.
    1. Found dependency for video thumbnails that play onHover, unfortunately they broke the tests and after much wrestling with jest/babel and modifying the dependency I have left them broken as I think it is a cra issue but they work fine in the browser. Online answers suggest a more recent version of Node offers functionality to explicitly declare dependencies as modules but unable to upgrade without ejecting cra.
-5. Context seemed the easiest way to implement the static Video container, found a versatile dependency react-player with keyboard navigation out the box and decent ui
+5. Context seemed the easiest way to implement the Video feature, found a versatile dependency react-player with keyboard navigation out the box and decent ui
 6. Some cleanup and refactorng, turned css modular
+7. Implemented the context hook for each Feed Item to change the main video
