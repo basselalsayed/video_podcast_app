@@ -12,15 +12,23 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   const disabled = state.visibleFeeds === (0 || state.splitFeeds.length - 1);
+  let visibleFeeds;
+  const currentFeeds = state.splitFeeds[visibleFeeds];
 
+  const DEFAULT_VISIBLE_FEEDS_RETURN = {
+    ...state,
+    currentFeeds,
+    disabled,
+    visibleFeeds,
+  };
   switch (action.type) {
     case 'SET_FEED':
-      const splitFeeds = splitFeed(action.payload.feed.items);
+      let splitFeeds = splitFeed(action.payload.feed.items);
       return {
         ...state,
         ...action.payload,
-        splitFeeds,
         currentFeeds: splitFeeds[state.visibleFeeds],
+        splitFeeds,
       };
     case 'SET_LOADING':
       return {
@@ -33,28 +41,18 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
       };
-    case 'INC_VISIBLE_FEEDS': {
-      let visibleFeeds =
+    case 'INC_VISIBLE_FEEDS':
+      visibleFeeds =
         state.visibleFeeds === state.splitFeeds.length - 1
           ? state.visibleFeeds
           : state.visibleFeeds + 1;
-      return {
-        ...state,
-        disabled,
-        visibleFeeds,
-        currentFeeds: state.splitFeeds[visibleFeeds],
-      };
-    }
-    case 'DEC_VISIBLE_FEEDS': {
-      let visibleFeeds =
+      return DEFAULT_VISIBLE_FEEDS_RETURN;
+
+    case 'DEC_VISIBLE_FEEDS':
+      visibleFeeds =
         state.visibleFeeds === 0 ? state.visibleFeeds : state.visibleFeeds - 1;
-      return {
-        ...state,
-        disabled,
-        visibleFeeds,
-        currentFeeds: state.splitFeeds[visibleFeeds],
-      };
-    }
+      return DEFAULT_VISIBLE_FEEDS_RETURN;
+
     default:
       return state;
   }
