@@ -1,4 +1,4 @@
-const NUM_VISIBLE_FEEDS = 4;
+import { NUM_VISIBLE_FEEDS } from '../Constants/numVisibleFields';
 
 const getVisibleFeeds = (type, state) => {
   if (type === 'next')
