@@ -2,18 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { ListGroup, Button } from 'react-bootstrap';
+import { Card, Button, ListGroup } from 'react-bootstrap';
 import Feed from './Feed';
 
-import { column } from './Feeds.module.css';
+import classes, { column } from './Feeds.module.css';
 
 const FeedsBase = ({
   currentFeeds,
+  feed,
   prevFeedListSection,
   disabled,
   nextFeedListSection,
 }) => (
   <div className={column}>
+    <Card>
+      <Card.Body className={classes.Card}>{feed.description}</Card.Body>
+    </Card>
     <Button
       children='&#9650;'
       disabled={disabled.prev}
@@ -37,6 +41,7 @@ const FeedsBase = ({
 
 const mapStateToProps = state => ({
   currentFeeds: state.currentFeeds,
+  feed: state.feed,
   disabled: state.disabled,
 });
 

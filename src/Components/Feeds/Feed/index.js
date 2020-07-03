@@ -21,7 +21,7 @@ const FeedBase = ({
       <div className={feed}>
         <VideoThumbnail
           classname={vidThumb}
-          width={'115%'}
+          width={'110%'}
           message=''
           badge={`${creator}`}
           title={null}

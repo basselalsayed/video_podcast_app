@@ -1,6 +1,12 @@
 .column {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  flex: 4;
+  flex-basis: 90%;
+  flex: 6;
+}
+
+.Card {
+
+  font-size: 10px;
+
 }

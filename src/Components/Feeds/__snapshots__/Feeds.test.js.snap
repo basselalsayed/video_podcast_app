@@ -45,12 +45,32 @@ exports[`<Feeds /> renders 1`] = `
           "prev": true,
         }
       }
+      feed={
+        Object {
+          "description": "test description",
+        }
+      }
       nextFeedListSection={[Function]}
       prevFeedListSection={[Function]}
     >
-      <div
-        className="column"
-      >
+      <div>
+        <Card
+          body={false}
+        >
+          <div
+            className="card"
+          >
+            <CardBody
+              className="Card"
+            >
+              <div
+                className="Card card-body"
+              >
+                test description
+              </div>
+            </CardBody>
+          </div>
+        </Card>
         <Button
           active={false}
           disabled={true}
@@ -155,13 +175,13 @@ exports[`<Feeds /> renders 1`] = `
                                 muted={true}
                                 preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
                                 title={null}
-                                width="115%"
+                                width="110%"
                               >
                                 <div
                                   className="styles_videoThumbnail__1A0YX vidThumb"
                                   style={
                                     Object {
-                                      "width": "115%",
+                                      "width": "110%",
                                     }
                                   }
                                 >
@@ -169,7 +189,7 @@ exports[`<Feeds /> renders 1`] = `
                                     className="styles_video__fdeKk"
                                     style={
                                       Object {
-                                        "width": "115%",
+                                        "width": "110%",
                                       }
                                     }
                                   >
@@ -180,7 +200,7 @@ exports[`<Feeds /> renders 1`] = `
                                       onMouseEnter={[Function]}
                                       onMouseLeave={[Function]}
                                       src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
-                                      width="115%"
+                                      width="110%"
                                     />
                                     <div
                                       className="styles_badge__3dxZ6"
@@ -304,13 +324,13 @@ exports[`<Feeds /> renders 1`] = `
                                 muted={true}
                                 preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
                                 title={null}
-                                width="115%"
+                                width="110%"
                               >
                                 <div
                                   className="styles_videoThumbnail__1A0YX vidThumb"
                                   style={
                                     Object {
-                                      "width": "115%",
+                                      "width": "110%",
                                     }
                                   }
                                 >
@@ -318,7 +338,7 @@ exports[`<Feeds /> renders 1`] = `
                                     className="styles_video__fdeKk"
                                     style={
                                       Object {
-                                        "width": "115%",
+                                        "width": "110%",
                                       }
                                     }
                                   >
@@ -329,7 +349,7 @@ exports[`<Feeds /> renders 1`] = `
                                       onMouseEnter={[Function]}
                                       onMouseLeave={[Function]}
                                       src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
-                                      width="115%"
+                                      width="110%"
                                     />
                                     <div
                                       className="styles_badge__3dxZ6"
@@ -453,13 +473,13 @@ exports[`<Feeds /> renders 1`] = `
                                 muted={true}
                                 preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
                                 title={null}
-                                width="115%"
+                                width="110%"
                               >
                                 <div
                                   className="styles_videoThumbnail__1A0YX vidThumb"
                                   style={
                                     Object {
-                                      "width": "115%",
+                                      "width": "110%",
                                     }
                                   }
                                 >
@@ -467,7 +487,7 @@ exports[`<Feeds /> renders 1`] = `
                                     className="styles_video__fdeKk"
                                     style={
                                       Object {
-                                        "width": "115%",
+                                        "width": "110%",
                                       }
                                     }
                                   >
@@ -478,7 +498,7 @@ exports[`<Feeds /> renders 1`] = `
                                       onMouseEnter={[Function]}
                                       onMouseLeave={[Function]}
                                       src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
-                                      width="115%"
+                                      width="110%"
                                     />
                                     <div
                                       className="styles_badge__3dxZ6"
@@ -602,13 +622,13 @@ exports[`<Feeds /> renders 1`] = `
                                 muted={true}
                                 preview="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
                                 title={null}
-                                width="115%"
+                                width="110%"
                               >
                                 <div
                                   className="styles_videoThumbnail__1A0YX vidThumb"
                                   style={
                                     Object {
-                                      "width": "115%",
+                                      "width": "110%",
                                     }
                                   }
                                 >
@@ -616,7 +636,7 @@ exports[`<Feeds /> renders 1`] = `
                                     className="styles_video__fdeKk"
                                     style={
                                       Object {
-                                        "width": "115%",
+                                        "width": "110%",
                                       }
                                     }
                                   >
@@ -627,7 +647,7 @@ exports[`<Feeds /> renders 1`] = `
                                       onMouseEnter={[Function]}
                                       onMouseLeave={[Function]}
                                       src="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
-                                      width="115%"
+                                      width="110%"
                                     />
                                     <div
                                       className="styles_badge__3dxZ6"

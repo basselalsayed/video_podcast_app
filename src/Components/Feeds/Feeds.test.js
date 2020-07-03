@@ -35,6 +35,7 @@ const currentFeeds = [
 
 const defaultProps = {
   currentFeeds,
+  feed: { description: 'test description' },
   prevFeedListSection: jest.fn(() => {}),
   disabled: { next: false, prev: true },
   nextFeedListSection: jest.fn(() => {}),
