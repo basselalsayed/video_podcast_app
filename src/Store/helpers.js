@@ -11,20 +11,6 @@ const getVisibleFeeds = (type, state) => {
       : state.visibleFeeds - 1;
 };
 
-const handleSectionChange = (type, state) => {
-  let visibleFeeds = getVisibleFeeds(type, state);
-  const currentFeeds = state.splitFeeds[visibleFeeds];
-  let next = visibleFeeds === currentFeeds.length - 1;
-  let prev = visibleFeeds === 0;
-  const disabled = { next, prev };
-  return {
-    ...state,
-    disabled,
-    currentFeeds,
-    visibleFeeds,
-  };
-};
-
 const parseVideoContent = content => {
   let period = content.indexOf('<');
   let [parsedDescription, parsedHtml] = [
@@ -39,4 +25,4 @@ const splitFeed = feed =>
     .fill()
     .map(_ => feed.splice(0, NUM_VISIBLE_FEEDS));
 
-export { handleSectionChange, parseVideoContent, splitFeed };
+export { getVisibleFeeds, parseVideoContent, splitFeed };

@@ -1,4 +1,9 @@
-import { handleSectionChange, parseVideoContent, splitFeed } from './helpers';
+import {
+  handleSectionChange,
+  setFeed,
+  setLoading,
+  setNowPlaying,
+} from './actions';
 
 const initialState = {
   currentFeeds: [],
@@ -8,29 +13,6 @@ const initialState = {
   nowPlaying: {},
   splitFeeds: [],
   visibleFeeds: 0,
-};
-
-const setFeed = (state, action) => {
-  const splitFeeds = splitFeed(action.payload.feed.items);
-  return {
-    ...state,
-    ...action.payload,
-    currentFeeds: splitFeeds[state.visibleFeeds],
-    splitFeeds,
-  };
-};
-
-const setLoading = (state, action) => ({
-  ...state,
-  ...action.payload,
-});
-
-const setNowPlaying = (state, action) => {
-  const nowPlaying = state.currentFeeds[action.idx];
-  return {
-    ...state,
-    nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
-  };
 };
 
 const rootReducer = (state = initialState, action) => {
