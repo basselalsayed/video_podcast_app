@@ -20,16 +20,18 @@ const setFeed = (state, action) => {
   };
 };
 
+const setLoading = (state, action) => ({
+  ...state,
+  ...action.payload,
+});
+
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_FEED':
       return setFeed(state, action);
 
     case 'SET_LOADING':
-      return {
-        ...state,
-        ...action.payload,
-      };
+      return setLoading(state, action);
 
     case 'SET_NOW_PLAYING':
       const nowPlaying = state.currentFeeds[action.idx];
