@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Navbar } from 'react-bootstrap';
 
-const Header = ({ title, rssHandler }) => (
+const Header = ({ link, title, rssHandler }) => (
   <>
     <Navbar>
       <Navbar.Brand>
-        <p>{title}</p>
+        <a href={link}>{title}</a>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className='justify-content-end'>

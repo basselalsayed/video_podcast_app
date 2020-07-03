@@ -8,12 +8,16 @@ import { Spinner } from 'react-bootstrap';
 
 import withClass from './hoc/withClass';
 
-const App = ({ feed, loading, setFeed, setLoading }) => {
+const App = ({
+  feed: { title, description, link },
+  loading,
+  setFeed,
+  setLoading,
+}) => {
   const rssHandler = async () => {
     setLoading(true);
 
     const response = await getRss();
-    console.log('response', response);
 
     setFeed(response);
     setLoading(false);
@@ -26,8 +30,9 @@ const App = ({ feed, loading, setFeed, setLoading }) => {
   return (
     <>
       <Header
-        title={feed.title || 'Welcome'}
-        description={feed.description || 'Lorem Ipsum'}
+        title={title || 'Welcome'}
+        description={description || 'Lorem Ipsum'}
+        link={link}
         rssHandler={rssHandler}
       />
       {loading ? (
