@@ -36,7 +36,7 @@ const currentFeeds = [
 const defaultProps = {
   currentFeeds,
   prevFeedListSection: jest.fn(() => {}),
-  canScroll: { next: true, prev: false },
+  disabled: { next: false, prev: true },
   nextFeedListSection: jest.fn(() => {}),
 };
 

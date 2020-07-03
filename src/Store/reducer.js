@@ -2,12 +2,37 @@ import { parseVideoContent, splitFeed } from './helpers';
 
 const initialState = {
   currentFeeds: [],
-  canScroll: { next: true, prev: false },
+  disabled: { next: false, prev: true },
   feed: [],
   loading: false,
   nowPlaying: {},
   splitFeeds: [],
   visibleFeeds: 0,
+};
+
+const getVisibleFeeds = (type, state) => {
+  if (type === 'next')
+    return state.visibleFeeds === state.splitFeeds.length - 1
+      ? state.visibleFeeds
+      : state.visibleFeeds + 1;
+  else
+    return state.visibleFeeds === 0
+      ? state.visibleFeeds
+      : state.visibleFeeds - 1;
+};
+
+const handleSectionChange = (type, state) => {
+  let visibleFeeds = getVisibleFeeds(type, state);
+  const currentFeeds = state.splitFeeds[visibleFeeds];
+  let next = visibleFeeds === currentFeeds.length - 1;
+  let prev = visibleFeeds === 0;
+  const disabled = { next, prev };
+  return {
+    ...state,
+    disabled,
+    currentFeeds,
+    visibleFeeds,
+  };
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -34,39 +59,11 @@ const rootReducer = (state = initialState, action) => {
         nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
       };
 
-    case 'NEXT_FEED_LIST_SECTION': {
-      let visibleFeeds =
-        state.visibleFeeds === state.splitFeeds.length - 1
-          ? state.visibleFeeds
-          : state.visibleFeeds + 1;
+    case 'NEXT_FEED_LIST_SECTION':
+      return { ...handleSectionChange('next', state) };
 
-      const currentFeeds = state.splitFeeds[visibleFeeds];
-      let next = visibleFeeds !== currentFeeds.length - 1;
-      let prev = visibleFeeds !== 0;
-      const canScroll = { next, prev };
-      return {
-        ...state,
-        canScroll,
-        currentFeeds,
-        visibleFeeds,
-      };
-    }
-
-    case 'PREV_FEEDS_LIST_SECTION': {
-      let visibleFeeds =
-        state.visibleFeeds === 0 ? state.visibleFeeds : state.visibleFeeds - 1;
-
-      const currentFeeds = state.splitFeeds[visibleFeeds];
-      let next = visibleFeeds !== currentFeeds.length - 1;
-      let prev = visibleFeeds !== 0;
-      const canScroll = { next, prev };
-      return {
-        ...state,
-        canScroll,
-        currentFeeds,
-        visibleFeeds,
-      };
-    }
+    case 'PREV_FEEDS_LIST_SECTION':
+      return { ...handleSectionChange('prev', state) };
 
     default:
       return state;

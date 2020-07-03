@@ -15,12 +15,6 @@ exports[`<Feeds /> renders 1`] = `
 >
   <Connect(FeedsBase)>
     <FeedsBase
-      canScroll={
-        Object {
-          "next": true,
-          "prev": false,
-        }
-      }
       currentFeeds={
         Array [
           Object {
@@ -44,6 +38,12 @@ exports[`<Feeds /> renders 1`] = `
             "title": "test 4",
           },
         ]
+      }
+      disabled={
+        Object {
+          "next": false,
+          "prev": true,
+        }
       }
       nextFeedListSection={[Function]}
       prevFeedListSection={[Function]}

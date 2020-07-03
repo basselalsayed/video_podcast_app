@@ -10,13 +10,13 @@ import { column } from './Feeds.module.css';
 const FeedsBase = ({
   currentFeeds,
   prevFeedListSection,
-  canScroll,
+  disabled,
   nextFeedListSection,
 }) => (
   <div className={column}>
     <Button
       children='&#9650;'
-      disabled={!canScroll.prev}
+      disabled={disabled.prev}
       id='scroll-prev'
       onClick={prevFeedListSection}
     />
@@ -28,7 +28,7 @@ const FeedsBase = ({
     </ListGroup>
     <Button
       children='&#9660;'
-      disabled={!canScroll.next}
+      disabled={disabled.next}
       id='scroll-next'
       onClick={nextFeedListSection}
     />
@@ -37,7 +37,7 @@ const FeedsBase = ({
 
 const mapStateToProps = state => ({
   currentFeeds: state.currentFeeds,
-  canScroll: state.canScroll,
+  disabled: state.disabled,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -52,6 +52,6 @@ export { Feeds };
 FeedsBase.propTypes = {
   currentFeeds: PropTypes.array.isRequired,
   prevFeedListSection: PropTypes.func.isRequired,
-  canScroll: PropTypes.object.isRequired,
+  disabled: PropTypes.object.isRequired,
   nextFeedListSection: PropTypes.func.isRequired,
 };
