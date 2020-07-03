@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const setFeed = (state, action) => {
-  let splitFeeds = splitFeed(action.payload.feed.items);
+  const splitFeeds = splitFeed(action.payload.feed.items);
   return {
     ...state,
     ...action.payload,
@@ -25,6 +25,14 @@ const setLoading = (state, action) => ({
   ...action.payload,
 });
 
+const setNowPlaying = (state, action) => {
+  const nowPlaying = state.currentFeeds[action.idx];
+  return {
+    ...state,
+    nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
+  };
+};
+
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_FEED':
@@ -34,17 +42,13 @@ const rootReducer = (state = initialState, action) => {
       return setLoading(state, action);
 
     case 'SET_NOW_PLAYING':
-      const nowPlaying = state.currentFeeds[action.idx];
-      return {
-        ...state,
-        nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
-      };
+      return setNowPlaying(state, action);
 
     case 'NEXT_FEED_LIST_SECTION':
-      return { ...handleSectionChange('next', state) };
+      return handleSectionChange('next', state);
 
     case 'PREV_FEEDS_LIST_SECTION':
-      return { ...handleSectionChange('prev', state) };
+      return handleSectionChange('prev', state);
 
     default:
       return state;
