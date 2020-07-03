@@ -1,4 +1,4 @@
-import { parseVideoContent, splitFeed } from './helpers';
+import { handleSectionChange, parseVideoContent, splitFeed } from './helpers';
 
 const initialState = {
   currentFeeds: [],
@@ -8,31 +8,6 @@ const initialState = {
   nowPlaying: {},
   splitFeeds: [],
   visibleFeeds: 0,
-};
-
-const getVisibleFeeds = (type, state) => {
-  if (type === 'next')
-    return state.visibleFeeds === state.splitFeeds.length - 1
-      ? state.visibleFeeds
-      : state.visibleFeeds + 1;
-  else
-    return state.visibleFeeds === 0
-      ? state.visibleFeeds
-      : state.visibleFeeds - 1;
-};
-
-const handleSectionChange = (type, state) => {
-  let visibleFeeds = getVisibleFeeds(type, state);
-  const currentFeeds = state.splitFeeds[visibleFeeds];
-  let next = visibleFeeds === currentFeeds.length - 1;
-  let prev = visibleFeeds === 0;
-  const disabled = { next, prev };
-  return {
-    ...state,
-    disabled,
-    currentFeeds,
-    visibleFeeds,
-  };
 };
 
 const rootReducer = (state = initialState, action) => {
