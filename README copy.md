@@ -23,4 +23,5 @@ Planning and dependency decision:
 6. Some cleanup and refactorng, turned css modular
 7. Implemented the context hook for each Feed Item to change the main video
 8. Implemented redux because of the way the feed data is structured, continuing with context the way I started would've worked too but this way there is no prop drilling, things are better seperated and the components are lighter.
-9.
+9. Attempting to rename all js subdirectories to lowercase for convention didn't work the way I usually do for unknown reason (rename to placeholder name then back to lowercase). Resulted in a couple of hours of debugging lost file history, learned painful lesson about trying to save time with `git config core.ignorecase`
+10. Flexbox has been on my list of things to learn for a while, had to get used to the nesting structure but display is now for the most part fixed apart from a little flex resizing bug when first clicking a video in full 720p (tested on 720p HDTV). Also mobile responsive auto stacking the now playing video underneath the header.
