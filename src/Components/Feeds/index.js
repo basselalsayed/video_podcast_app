@@ -5,18 +5,20 @@ import PropTypes from 'prop-types';
 import { ListGroup, Button } from 'react-bootstrap';
 import Feed from './Feed';
 
+import { column } from './Feeds.module.css';
+
 const FeedsBase = ({
   currentFeeds,
-  decVisibleFeeds,
-  disabled,
-  incVisibleFeeds,
+  prevFeedListSection,
+  canScroll,
+  nextFeedListSection,
 }) => (
-  <>
+  <div className={column}>
     <Button
       children='&#9650;'
-      disabled={disabled}
-      id='scroll-up'
-      onClick={decVisibleFeeds}
+      disabled={!canScroll.prev}
+      id='scroll-prev'
+      onClick={prevFeedListSection}
     />
     <ListGroup>
       {currentFeeds &&
@@ -26,21 +28,21 @@ const FeedsBase = ({
     </ListGroup>
     <Button
       children='&#9660;'
-      disabled={disabled}
-      id='scroll-down'
-      onClick={incVisibleFeeds}
+      disabled={!canScroll.next}
+      id='scroll-next'
+      onClick={nextFeedListSection}
     />
-  </>
+  </div>
 );
 
 const mapStateToProps = state => ({
   currentFeeds: state.currentFeeds,
-  disabled: state.disabled,
+  canScroll: state.canScroll,
 });
 
 const mapDispatchToProps = dispatch => ({
-  incVisibleFeeds: () => dispatch({ type: 'INC_VISIBLE_FEEDS' }),
-  decVisibleFeeds: () => dispatch({ type: 'DEC_VISIBLE_FEEDS' }),
+  nextFeedListSection: () => dispatch({ type: 'NEXT_FEED_LIST_SECTION' }),
+  prevFeedListSection: () => dispatch({ type: 'PREV_FEEDS_LIST_SECTION' }),
 });
 
 const Feeds = connect(mapStateToProps, mapDispatchToProps)(FeedsBase);
@@ -49,7 +51,7 @@ export { Feeds };
 
 FeedsBase.propTypes = {
   currentFeeds: PropTypes.array.isRequired,
-  decVisibleFeeds: PropTypes.func.isRequired,
-  disabled: PropTypes.bool.isRequired,
-  incVisibleFeeds: PropTypes.func.isRequired,
+  prevFeedListSection: PropTypes.func.isRequired,
+  canScroll: PropTypes.object.isRequired,
+  nextFeedListSection: PropTypes.func.isRequired,
 };

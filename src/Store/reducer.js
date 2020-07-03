@@ -2,7 +2,7 @@ import { parseVideoContent, splitFeed } from './helpers';
 
 const initialState = {
   currentFeeds: [],
-  disabled: false,
+  canScroll: { next: true, prev: false },
   feed: [],
   loading: false,
   nowPlaying: {},
@@ -11,17 +11,6 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  const disabled = state.visibleFeeds === (0 || state.splitFeeds.length - 1);
-  let visibleFeeds;
-  const currentFeeds = state.splitFeeds[visibleFeeds];
-
-  const DEFAULT_VISIBLE_FEEDS_RETURN = {
-    ...state,
-    currentFeeds,
-    disabled,
-    visibleFeeds,
-  };
-
   switch (action.type) {
     case 'SET_FEED':
       let splitFeeds = splitFeed(action.payload.feed.items);
@@ -45,17 +34,39 @@ const rootReducer = (state = initialState, action) => {
         nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },
       };
 
-    case 'INC_VISIBLE_FEEDS':
-      visibleFeeds =
+    case 'NEXT_FEED_LIST_SECTION': {
+      let visibleFeeds =
         state.visibleFeeds === state.splitFeeds.length - 1
           ? state.visibleFeeds
           : state.visibleFeeds + 1;
-      return DEFAULT_VISIBLE_FEEDS_RETURN;
 
-    case 'DEC_VISIBLE_FEEDS':
-      visibleFeeds =
+      const currentFeeds = state.splitFeeds[visibleFeeds];
+      let next = visibleFeeds !== currentFeeds.length - 1;
+      let prev = visibleFeeds !== 0;
+      const canScroll = { next, prev };
+      return {
+        ...state,
+        canScroll,
+        currentFeeds,
+        visibleFeeds,
+      };
+    }
+
+    case 'PREV_FEEDS_LIST_SECTION': {
+      let visibleFeeds =
         state.visibleFeeds === 0 ? state.visibleFeeds : state.visibleFeeds - 1;
-      return DEFAULT_VISIBLE_FEEDS_RETURN;
+
+      const currentFeeds = state.splitFeeds[visibleFeeds];
+      let next = visibleFeeds !== currentFeeds.length - 1;
+      let prev = visibleFeeds !== 0;
+      const canScroll = { next, prev };
+      return {
+        ...state,
+        canScroll,
+        currentFeeds,
+        visibleFeeds,
+      };
+    }
 
     default:
       return state;

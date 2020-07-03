@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Navbar } from 'react-bootstrap';
 
-const Header = ({ description, title, rssHandler }) => (
+const Header = ({ title, rssHandler }) => (
   <>
     <Navbar>
       <Navbar.Brand>
@@ -10,17 +10,17 @@ const Header = ({ description, title, rssHandler }) => (
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className='justify-content-end'>
-        <Button id='refresh-rss' onClick={rssHandler}>
-          Update Feed
-        </Button>
+        <Button
+          id='refresh-rss'
+          onClick={rssHandler}
+          children={'Update Feed'}
+        />
       </Navbar.Collapse>
     </Navbar>
-    <h3>{description}</h3>
   </>
 );
 
 Header.propTypes = {
-  description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   rssHandler: PropTypes.func.isRequired,
 };

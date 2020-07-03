@@ -1,6 +1,26 @@
 import { Feeds } from './';
 import Feed from './Feed';
 
+// react has issue with muted video in dom
+// works ok though so this removes error logging
+// https://github.com/facebook/react/issues/10389
+
+const renderIgnoringUnstableFlushDiscreteUpdates = component => {
+  /* eslint-disable no-console */
+  const originalError = console.error;
+  const error = jest.fn();
+  console.error = error;
+  const result = mount(component);
+  expect(error).toHaveBeenCalled();
+  expect(error).toHaveBeenCalledWith(
+    'Warning: unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering.%s',
+    expect.any(String),
+  );
+  console.error = originalError;
+  /* eslint-enable no-console */
+  return result;
+};
+
 const mockStore = configureStore([]);
 
 const pubDate = new Date().getDate();
@@ -15,9 +35,9 @@ const currentFeeds = [
 
 const defaultProps = {
   currentFeeds,
-  decVisibleFeeds: jest.fn(() => {}),
-  disabled: false,
-  incVisibleFeeds: jest.fn(() => {}),
+  prevFeedListSection: jest.fn(() => {}),
+  canScroll: { next: true, prev: false },
+  nextFeedListSection: jest.fn(() => {}),
 };
 
 describe('<Feeds />', () => {
@@ -30,7 +50,7 @@ describe('<Feeds />', () => {
 
     store.dispatch = jest.fn();
 
-    wrapper = mount(
+    wrapper = renderIgnoringUnstableFlushDiscreteUpdates(
       <Provider store={store}>
         <Feeds />
       </Provider>,
@@ -46,8 +66,7 @@ describe('<Feeds />', () => {
   });
 
   it('calls a redux dispatch on scroll click', () => {
-    wrapper.find('#scroll-down').at(0).simulate('click');
-    wrapper.find('#scroll-up').at(0).simulate('click');
-    expect(store.dispatch).toHaveBeenCalledTimes(2);
+    wrapper.find('#scroll-next').at(0).simulate('click');
+    expect(store.dispatch).toHaveBeenCalledTimes(1);
   });
 });

@@ -18,10 +18,7 @@ describe('<Header />', () => {
 
   it('has correct inner text', () => {
     expect(
-      wrapper.containsAllMatchingElements([
-        <p>{defaultProps.title}</p>,
-        <h3>{defaultProps.description}</h3>,
-      ]),
+      wrapper.containsAllMatchingElements([<p>{defaultProps.title}</p>]),
     ).toEqual(true);
   });
 

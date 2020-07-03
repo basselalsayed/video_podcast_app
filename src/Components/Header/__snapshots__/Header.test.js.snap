@@ -30,8 +30,5 @@ exports[`<Header /> renders 1`] = `
       </Button>
     </NavbarCollapse>
   </Navbar>
-  <h3>
-    A test description
-  </h3>
 </Fragment>
 `;

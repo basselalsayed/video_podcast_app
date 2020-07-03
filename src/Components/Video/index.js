@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 
 import ReactPlayer from 'react-player/lazy';
 import { Card } from 'react-bootstrap';
-
+import { right } from '../../App.module.css';
 const VideoBase = ({
   nowPlaying: { content, link, parsedDescription, parsedHtml },
 }) => (
-  <Card>
+  <div className={right}>
     {content && (
       <>
-        <ReactPlayer url={link} controls />
+        <ReactPlayer width={'inherit'} height={'inherit'} url={link} controls />
         <Card.Body>{parsedDescription}</Card.Body>
         <Card.Footer dangerouslySetInnerHTML={{ __html: parsedHtml }} />
       </>
     )}
-  </Card>
+  </div>
 );
 
 const mapStateToProps = state => ({

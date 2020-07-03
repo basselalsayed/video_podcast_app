@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import classes, { column, row } from './App.module.css';
+import classes, { left, right, row } from './App.module.css';
 
 import { getRss } from './api';
 import { Header, Feeds, Video } from './Components';
@@ -34,12 +34,11 @@ const App = ({ feed, loading, setFeed, setLoading }) => {
         <Spinner animation='border' />
       ) : (
         <div className={row}>
-          <div className={column}>
+          <div className={left}>
             <Feeds />
           </div>
-          <div className={column}>
-            <Video />
-          </div>
+
+          <Video />
         </div>
       )}
     </>
