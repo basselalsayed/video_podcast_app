@@ -10,16 +10,20 @@ const initialState = {
   visibleFeeds: 0,
 };
 
+const setFeed = (state, action) => {
+  let splitFeeds = splitFeed(action.payload.feed.items);
+  return {
+    ...state,
+    ...action.payload,
+    currentFeeds: splitFeeds[state.visibleFeeds],
+    splitFeeds,
+  };
+};
+
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_FEED':
-      let splitFeeds = splitFeed(action.payload.feed.items);
-      return {
-        ...state,
-        ...action.payload,
-        currentFeeds: splitFeeds[state.visibleFeeds],
-        splitFeeds,
-      };
+      return setFeed(state, action);
 
     case 'SET_LOADING':
       return {
