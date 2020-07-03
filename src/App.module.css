@@ -30,3 +30,14 @@
   flex-direction: column;
   flex: 8;
 }
+
+
+@media screen and (max-width: 450px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+
+  .right {
+    width: fit-content;
+  }
+}
