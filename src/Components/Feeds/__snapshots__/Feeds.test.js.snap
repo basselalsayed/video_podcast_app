@@ -73,7 +73,7 @@ exports[`<Feeds /> renders 1`] = `
         </Card>
         <Button
           active={false}
-          disabled={true}
+          disabled={false}
           id="scroll-prev"
           onClick={[Function]}
           type="button"
@@ -81,7 +81,7 @@ exports[`<Feeds /> renders 1`] = `
         >
           <button
             className="btn btn-primary"
-            disabled={true}
+            disabled={false}
             id="scroll-prev"
             onClick={[Function]}
             type="button"

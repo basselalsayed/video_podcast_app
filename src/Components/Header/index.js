@@ -15,7 +15,7 @@ const Header = ({ link, title, rssHandler }) => (
 );
 
 Header.propTypes = {
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
   title: PropTypes.string.isRequired,
   rssHandler: PropTypes.func.isRequired,
 };

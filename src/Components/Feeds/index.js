@@ -11,7 +11,7 @@ const FeedsBase = ({
   currentFeeds,
   feed,
   prevFeedListSection,
-  disabled,
+  // disabled,
   nextFeedListSection,
 }) => (
   <div className={column}>
@@ -20,6 +20,9 @@ const FeedsBase = ({
     </Card>
     <Button
       children='&#9650;'
+      // disabled has been commented out as I think it is better ui to allow the buttons to be focused
+      // redux validation prevents a click from going out of bounds so its safe
+      // I left it in to show the work done
       // disabled={disabled.prev}
       id='scroll-prev'
       onClick={prevFeedListSection}

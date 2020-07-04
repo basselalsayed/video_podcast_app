@@ -49,7 +49,7 @@ const focusVidFooter = i => {
 };
 
 // in the thumbnail list up and down should navigate items not sections
-// kept in two functions for legibility
+// navlogic split in two functions for legibility
 const thumbnailFocus = (arrow, { item, section }) => {
   switch (arrow) {
     case UP:
