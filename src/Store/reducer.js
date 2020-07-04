@@ -55,49 +55,45 @@ const listFocus = (arrow, { item, section }) => {
   }
 };
 
+const normalFocus = (arrow, { item, section }) => {
+  switch (arrow) {
+    case UP:
+      if (section === 0) {
+        return [section, 0];
+      } else {
+        return [section - 1, 0];
+      }
+    case DOWN:
+      if (section === 2) {
+        return [section, 0];
+      } else {
+        return [section + 1, 0];
+      }
+    case LEFT:
+      if (item === 0) {
+        return [section, item];
+      } else {
+        return [section, item - 1];
+      }
+    case RIGHT:
+      if (item === SECTION_LENGTHS[section]) {
+        return [section, item];
+      } else {
+        return [section, item + 1];
+      }
+    default:
+      break;
+  }
+};
+
 const arrowPress = (arrow, prevFocus) => {
   let section, item;
 
   if (prevFocus.section === 1) {
     [section, item] = listFocus(arrow, prevFocus);
   } else {
-    if (arrow === UP) {
-      console.log('prevItem:', prevFocus);
-      if (prevFocus.section === 0) {
-        section = prevFocus.section;
-      } else {
-        section = prevFocus.section - 1;
-      }
-      item = 0;
-    } else if (arrow === DOWN) {
-      console.log('prevItem:', prevFocus);
-      if (prevFocus.section === 2) {
-        section = prevFocus.section;
-      } else {
-        section = prevFocus.section + 1;
-      }
-      item = 0;
-    } else if (arrow === LEFT) {
-      console.log('prevItem:', prevFocus);
-      if (prevFocus.item === 0) {
-        item = prevFocus.item;
-      } else {
-        item = prevFocus.item - 1;
-
-        console.log('leftitem', item);
-      }
-      section = prevFocus.section;
-    } else if (arrow === RIGHT) {
-      console.log('prevItem:', prevFocus);
-      if (prevFocus.item === SECTION_LENGTHS[prevFocus.section]) {
-        item = prevFocus.item;
-      } else {
-        item = prevFocus.item + 1;
-      }
-      section = prevFocus.section;
-    }
+    [section, item] = normalFocus(arrow, prevFocus);
   }
-
   console.log('navs:', { section, item });
 
   section < 2
