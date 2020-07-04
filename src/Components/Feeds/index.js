@@ -20,7 +20,7 @@ const FeedsBase = ({
     </Card>
     <Button
       children='&#9650;'
-      disabled={disabled.prev}
+      // disabled={disabled.prev}
       id='scroll-prev'
       onClick={prevFeedListSection}
     />
@@ -32,7 +32,7 @@ const FeedsBase = ({
     </ListGroup>
     <Button
       children='&#9660;'
-      disabled={disabled.next}
+      // disabled={disabled.next}
       id='scroll-next'
       onClick={nextFeedListSection}
     />
