@@ -19,11 +19,11 @@ const cycleDisplayedFeeds = (type, state) => {
   };
 };
 
-const setFeed = (state, action) => {
-  const splitFeeds = splitFeed(action.payload.feed.items);
+const setFeed = (state, { payload }) => {
+  const splitFeeds = splitFeed(payload.feed.items);
   return {
     ...state,
-    ...action.payload,
+    ...payload,
     currentFeeds: splitFeeds[state.visibleFeeds],
     splitFeeds,
   };
@@ -34,8 +34,8 @@ const setLoading = (state, action) => ({
   ...action.payload,
 });
 
-const setNowPlaying = (state, action) => {
-  const nowPlaying = state.currentFeeds[action.idx];
+const setNowPlaying = (state, { idx }) => {
+  const nowPlaying = state.currentFeeds[idx];
   return {
     ...state,
     nowPlaying: { ...nowPlaying, ...parseVideoContent(nowPlaying.content) },

@@ -10,14 +10,13 @@ import {
 const [UP, DOWN, LEFT, RIGHT] = ARROW_KEYS;
 
 const getVisibleFeeds = (type, state) => {
-  if (type === 'next')
-    return state.visibleFeeds === state.splitFeeds.length - 1
+  return type === 'next'
+    ? state.visibleFeeds === state.splitFeeds.length - 1
       ? state.visibleFeeds
-      : state.visibleFeeds + 1;
-  else
-    return state.visibleFeeds === 0
-      ? state.visibleFeeds
-      : state.visibleFeeds - 1;
+      : state.visibleFeeds + 1
+    : state.visibleFeeds === 0
+    ? state.visibleFeeds
+    : state.visibleFeeds - 1;
 };
 
 const parseVideoContent = content => {
