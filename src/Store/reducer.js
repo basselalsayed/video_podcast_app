@@ -27,35 +27,39 @@ const focusElement = elementId => {
   let element = document.querySelector('#' + elementId);
   element && element.focus();
 };
+
+const focusVideo = () =>
+  document.querySelectorAll('div#main-vid > video').forEach(el => el.focus());
+
+const listFocus = (arrow, { item, section }) => {
+  switch (arrow) {
+    case UP:
+      if (item === 0) {
+        return [section - 1, item];
+      } else {
+        return [section, item - 1];
+      }
+    case DOWN:
+      if (item === SECTION_LENGTHS[section]) {
+        return [section, item];
+      } else {
+        return [section, item + 1];
+      }
+    case LEFT:
+      return [section, item];
+    case RIGHT:
+      return [2, 0];
+
+    default:
+      break;
+  }
+};
+
 const arrowPress = (arrow, prevFocus) => {
   let section, item;
 
   if (prevFocus.section === 1) {
-    if (arrow === UP) {
-      console.log('prevItem:', prevFocus);
-      if (prevFocus.item === 0) {
-        section = prevFocus.section - 1;
-        item = prevFocus.item;
-      } else {
-        item = prevFocus.item - 1;
-        section = prevFocus.section;
-      }
-    } else if (arrow === DOWN) {
-      console.log('prevItem:', prevFocus);
-      if (prevFocus.item === SECTION_LENGTHS[prevFocus.section]) {
-        item = prevFocus.item;
-      } else {
-        item = prevFocus.item + 1;
-      }
-      section = prevFocus.section;
-    } else if (arrow === LEFT) {
-      item = prevFocus.item;
-      section = prevFocus.section;
-    } else if (arrow === RIGHT) {
-      console.log('prevItem:', prevFocus);
-      section = 2;
-      item = 0;
-    }
+    [section, item] = listFocus(arrow, prevFocus);
   } else {
     if (arrow === UP) {
       console.log('prevItem:', prevFocus);
@@ -96,7 +100,10 @@ const arrowPress = (arrow, prevFocus) => {
 
   console.log('navs:', { section, item });
 
-  focusElement(ARROW_NAV_SECTIONS[ARROW_NAV_SECTION_TITLES[section]][item]);
+  section < 2
+    ? focusElement(ARROW_NAV_SECTIONS[ARROW_NAV_SECTION_TITLES[section]][item])
+    : focusVideo();
+
   return {
     section,
     item,
