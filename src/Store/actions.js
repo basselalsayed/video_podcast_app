@@ -1,6 +1,11 @@
-import { getVisibleFeeds, parseVideoContent, splitFeed } from './helpers';
+import {
+  arrowPress,
+  getVisibleFeeds,
+  parseVideoContent,
+  splitFeed,
+} from './helpers';
 
-const handleSectionChange = (type, state) => {
+const cycleDisplayedFeeds = (type, state) => {
   let visibleFeeds = getVisibleFeeds(type, state);
   const currentFeeds = state.splitFeeds[visibleFeeds];
   let next = visibleFeeds === currentFeeds.length - 1;
@@ -37,4 +42,15 @@ const setNowPlaying = (state, action) => {
   };
 };
 
-export { handleSectionChange, setFeed, setLoading, setNowPlaying };
+const handleArrowPress = (type, state) => ({
+  ...state,
+  currentFocus: arrowPress(type, state.currentFocus),
+});
+
+export {
+  cycleDisplayedFeeds,
+  handleArrowPress,
+  setFeed,
+  setLoading,
+  setNowPlaying,
+};
