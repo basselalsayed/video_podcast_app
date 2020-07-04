@@ -1,19 +1,17 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+
+import { getRss, isDirectional } from '../../Helpers';
 import classes, { left, row } from './App.module.css';
 
-import { getRss } from './api';
-import { Header, Feeds, Video } from './Components';
-import { ARROW_KEYS } from './Constants';
-
-import { isDirectional } from './navigation';
+import { Header, Feeds, Video } from '../';
 import { Spinner } from 'react-bootstrap';
 
-import withClass from './hoc/withClass';
+import { ARROW_KEYS } from '../../Constants';
 
 const [UP, DOWN, LEFT, RIGHT] = ARROW_KEYS;
 
-const App = ({
+const AppBase = ({
   arrowPress,
   feed: { title, description, link },
   loading,
@@ -52,7 +50,7 @@ const App = ({
   }, []);
 
   return (
-    <>
+    <div className={classes.App}>
       <Header
         title={title || 'Welcome'}
         description={description || 'Lorem Ipsum'}
@@ -70,7 +68,7 @@ const App = ({
           <Video />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
@@ -87,6 +85,6 @@ const mapDispatchToProps = dispatch => ({
   setFeed: feed => dispatch({ type: 'SET_FEED', payload: { feed } }),
 });
 
-const StyledApp = withClass(App, classes.App);
+const App = connect(mapStateToProps, mapDispatchToProps)(AppBase);
 
-export default connect(mapStateToProps, mapDispatchToProps)(StyledApp);
+export { App };

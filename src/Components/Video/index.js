@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import ReactPlayer from 'react-player/lazy';
 import { Card } from 'react-bootstrap';
-import { right } from '../../App.module.css';
+import { right } from '../App/App.module.css';
+
 const VideoBase = ({
   nowPlaying: { content, link, parsedDescription, parsedHtml },
 }) => (
