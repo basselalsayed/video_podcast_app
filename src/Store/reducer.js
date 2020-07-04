@@ -24,12 +24,19 @@ const initialState = {
 };
 
 const focusElement = elementId => {
-  let element = document.querySelector('#' + elementId);
+  let element = document.querySelector(`#${elementId}`);
   element && element.focus();
 };
 
 const focusVideo = () =>
-  document.querySelectorAll('div#main-vid > video').forEach(el => el.focus());
+  document
+    .querySelectorAll('div#main-vid > video')
+    .forEach(el => el && el.focus());
+
+const focusVidFooter = i => {
+  let el = document.querySelectorAll('.feedflare > a')[i];
+  el && el.focus();
+};
 
 const listFocus = (arrow, { item, section }) => {
   switch (arrow) {
@@ -64,7 +71,7 @@ const normalFocus = (arrow, { item, section }) => {
         return [section - 1, 0];
       }
     case DOWN:
-      if (section === 2) {
+      if (section === 3) {
         return [section, 0];
       } else {
         return [section + 1, 0];
@@ -96,9 +103,10 @@ const arrowPress = (arrow, prevFocus) => {
   }
   console.log('navs:', { section, item });
 
-  section < 2
-    ? focusElement(ARROW_NAV_SECTIONS[ARROW_NAV_SECTION_TITLES[section]][item])
-    : focusVideo();
+  if (section < 2)
+    focusElement(ARROW_NAV_SECTIONS[ARROW_NAV_SECTION_TITLES[section]][item]);
+  if (section === 2) focusVideo();
+  if (section === 3) focusVidFooter(item);
 
   return {
     section,

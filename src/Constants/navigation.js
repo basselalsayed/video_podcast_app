@@ -1,6 +1,6 @@
-const ARROW_NAV_SECTION_TITLES = ['header', 'scroll', 'video'];
+const ARROW_NAV_SECTION_TITLES = ['header', 'scroll', 'video', 'videoFooter'];
 const ARROW_KEYS = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
-const [header, scroll, video] = ARROW_NAV_SECTION_TITLES;
+const [header, scroll, video, videoFooter] = ARROW_NAV_SECTION_TITLES;
 
 const ARROW_NAV_SECTIONS = {
   [header]: ['brand-link', 'refresh-rss'],
@@ -13,8 +13,9 @@ const ARROW_NAV_SECTIONS = {
     'scroll-next',
   ],
   [video]: ['main-vid'],
+  [videoFooter]: [0, 1, 2, 3, 4],
 };
-const SECTION_LENGTHS = [1, 5, 0];
+const SECTION_LENGTHS = [1, 5, 0, 5];
 
 export {
   ARROW_KEYS,
