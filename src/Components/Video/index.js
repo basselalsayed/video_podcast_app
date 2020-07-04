@@ -12,6 +12,7 @@ const VideoBase = ({
       <>
         <ReactPlayer
           id='main-vid'
+          style={{ padding: 10 }}
           width={'inherit'}
           height={'inherit'}
           url={link}
