@@ -10,7 +10,13 @@ const VideoBase = ({
   <div className={right}>
     {content && (
       <>
-        <ReactPlayer width={'inherit'} height={'inherit'} url={link} controls />
+        <ReactPlayer
+          id='main-vid'
+          width={'inherit'}
+          height={'inherit'}
+          url={link}
+          controls
+        />
         <Card.Body>{parsedDescription}</Card.Body>
         <Card.Footer dangerouslySetInnerHTML={{ __html: parsedHtml }} />
       </>

@@ -13,6 +13,8 @@ const FeedBase = ({
   setNowPlayingRedux,
 }) => (
   <ListGroupItem
+    id={`thumb-${idx}`}
+    tabIndex={-1}
     style={{ padding: 0 }}
     action
     onClick={() => setNowPlayingRedux(idx)}

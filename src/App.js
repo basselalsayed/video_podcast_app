@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import classes, { left, right, row } from './App.module.css';
+import classes, { left, row } from './App.module.css';
 
 import { getRss } from './api';
 import { Header, Feeds, Video } from './Components';
+import { ARROW_KEYS } from './Constants';
+
+import { isDirectional } from './navigation';
 import { Spinner } from 'react-bootstrap';
 
 import withClass from './hoc/withClass';
 
+const [UP, DOWN, LEFT, RIGHT] = ARROW_KEYS;
+
 const App = ({
+  arrowPress,
   feed: { title, description, link },
   loading,
   setFeed,
@@ -23,7 +29,25 @@ const App = ({
     setLoading(false);
   };
 
+  const handleKeyDown = e => {
+    if (isDirectional(e.key)) e.preventDefault();
+
+    switch (e.key) {
+      case UP:
+        return arrowPress(UP);
+      case DOWN:
+        return arrowPress(DOWN);
+      case LEFT:
+        return arrowPress(LEFT);
+      case RIGHT:
+        return arrowPress(RIGHT);
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
     rssHandler();
   }, []);
 
@@ -57,6 +81,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  arrowPress: type => dispatch({ type }),
   setLoading: loading =>
     dispatch({ type: 'SET_LOADING', payload: { loading } }),
   setFeed: feed => dispatch({ type: 'SET_FEED', payload: { feed } }),

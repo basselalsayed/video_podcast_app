@@ -19,22 +19,22 @@ exports[`<Feeds /> renders 1`] = `
         Array [
           Object {
             "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-            "pubDate": 3,
+            "pubDate": 4,
             "title": "test 1",
           },
           Object {
             "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-            "pubDate": 3,
+            "pubDate": 4,
             "title": "test 2",
           },
           Object {
             "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-            "pubDate": 3,
+            "pubDate": 4,
             "title": "test 3",
           },
           Object {
             "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-            "pubDate": 3,
+            "pubDate": 4,
             "title": "test 4",
           },
         ]
@@ -106,7 +106,7 @@ exports[`<Feeds /> renders 1`] = `
                 feed={
                   Object {
                     "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                    "pubDate": 3,
+                    "pubDate": 4,
                     "title": "test 1",
                   }
                 }
@@ -117,7 +117,7 @@ exports[`<Feeds /> renders 1`] = `
                   feed={
                     Object {
                       "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                      "pubDate": 3,
+                      "pubDate": 4,
                       "title": "test 1",
                     }
                   }
@@ -128,12 +128,14 @@ exports[`<Feeds /> renders 1`] = `
                     action={true}
                     active={false}
                     disabled={false}
+                    id="thumb-0"
                     onClick={[Function]}
                     style={
                       Object {
                         "padding": 0,
                       }
                     }
+                    tabIndex={-1}
                     variant={null}
                   >
                     <ForwardRef
@@ -141,17 +143,20 @@ exports[`<Feeds /> renders 1`] = `
                       className="list-group-item list-group-item-action"
                       disabled={false}
                       eventKey={null}
+                      id="thumb-0"
                       onClick={[Function]}
                       style={
                         Object {
                           "padding": 0,
                         }
                       }
+                      tabIndex={-1}
                     >
                       <button
                         className="list-group-item list-group-item-action"
                         data-rb-event-key={null}
                         disabled={false}
+                        id="thumb-0"
                         onClick={[Function]}
                         style={
                           Object {
@@ -239,7 +244,7 @@ exports[`<Feeds /> renders 1`] = `
                                   <div
                                     className="card-footer"
                                   >
-                                    3
+                                    4
                                   </div>
                                 </CardFooter>
                               </div>
@@ -255,7 +260,7 @@ exports[`<Feeds /> renders 1`] = `
                 feed={
                   Object {
                     "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                    "pubDate": 3,
+                    "pubDate": 4,
                     "title": "test 2",
                   }
                 }
@@ -266,7 +271,7 @@ exports[`<Feeds /> renders 1`] = `
                   feed={
                     Object {
                       "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                      "pubDate": 3,
+                      "pubDate": 4,
                       "title": "test 2",
                     }
                   }
@@ -277,12 +282,14 @@ exports[`<Feeds /> renders 1`] = `
                     action={true}
                     active={false}
                     disabled={false}
+                    id="thumb-1"
                     onClick={[Function]}
                     style={
                       Object {
                         "padding": 0,
                       }
                     }
+                    tabIndex={-1}
                     variant={null}
                   >
                     <ForwardRef
@@ -290,17 +297,20 @@ exports[`<Feeds /> renders 1`] = `
                       className="list-group-item list-group-item-action"
                       disabled={false}
                       eventKey={null}
+                      id="thumb-1"
                       onClick={[Function]}
                       style={
                         Object {
                           "padding": 0,
                         }
                       }
+                      tabIndex={-1}
                     >
                       <button
                         className="list-group-item list-group-item-action"
                         data-rb-event-key={null}
                         disabled={false}
+                        id="thumb-1"
                         onClick={[Function]}
                         style={
                           Object {
@@ -388,7 +398,7 @@ exports[`<Feeds /> renders 1`] = `
                                   <div
                                     className="card-footer"
                                   >
-                                    3
+                                    4
                                   </div>
                                 </CardFooter>
                               </div>
@@ -404,7 +414,7 @@ exports[`<Feeds /> renders 1`] = `
                 feed={
                   Object {
                     "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                    "pubDate": 3,
+                    "pubDate": 4,
                     "title": "test 3",
                   }
                 }
@@ -415,7 +425,7 @@ exports[`<Feeds /> renders 1`] = `
                   feed={
                     Object {
                       "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                      "pubDate": 3,
+                      "pubDate": 4,
                       "title": "test 3",
                     }
                   }
@@ -426,12 +436,14 @@ exports[`<Feeds /> renders 1`] = `
                     action={true}
                     active={false}
                     disabled={false}
+                    id="thumb-2"
                     onClick={[Function]}
                     style={
                       Object {
                         "padding": 0,
                       }
                     }
+                    tabIndex={-1}
                     variant={null}
                   >
                     <ForwardRef
@@ -439,17 +451,20 @@ exports[`<Feeds /> renders 1`] = `
                       className="list-group-item list-group-item-action"
                       disabled={false}
                       eventKey={null}
+                      id="thumb-2"
                       onClick={[Function]}
                       style={
                         Object {
                           "padding": 0,
                         }
                       }
+                      tabIndex={-1}
                     >
                       <button
                         className="list-group-item list-group-item-action"
                         data-rb-event-key={null}
                         disabled={false}
+                        id="thumb-2"
                         onClick={[Function]}
                         style={
                           Object {
@@ -537,7 +552,7 @@ exports[`<Feeds /> renders 1`] = `
                                   <div
                                     className="card-footer"
                                   >
-                                    3
+                                    4
                                   </div>
                                 </CardFooter>
                               </div>
@@ -553,7 +568,7 @@ exports[`<Feeds /> renders 1`] = `
                 feed={
                   Object {
                     "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                    "pubDate": 3,
+                    "pubDate": 4,
                     "title": "test 4",
                   }
                 }
@@ -564,7 +579,7 @@ exports[`<Feeds /> renders 1`] = `
                   feed={
                     Object {
                       "link": "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
-                      "pubDate": 3,
+                      "pubDate": 4,
                       "title": "test 4",
                     }
                   }
@@ -575,12 +590,14 @@ exports[`<Feeds /> renders 1`] = `
                     action={true}
                     active={false}
                     disabled={false}
+                    id="thumb-3"
                     onClick={[Function]}
                     style={
                       Object {
                         "padding": 0,
                       }
                     }
+                    tabIndex={-1}
                     variant={null}
                   >
                     <ForwardRef
@@ -588,17 +605,20 @@ exports[`<Feeds /> renders 1`] = `
                       className="list-group-item list-group-item-action"
                       disabled={false}
                       eventKey={null}
+                      id="thumb-3"
                       onClick={[Function]}
                       style={
                         Object {
                           "padding": 0,
                         }
                       }
+                      tabIndex={-1}
                     >
                       <button
                         className="list-group-item list-group-item-action"
                         data-rb-event-key={null}
                         disabled={false}
+                        id="thumb-3"
                         onClick={[Function]}
                         style={
                           Object {
@@ -686,7 +706,7 @@ exports[`<Feeds /> renders 1`] = `
                                   <div
                                     className="card-footer"
                                   >
-                                    3
+                                    4
                                   </div>
                                 </CardFooter>
                               </div>
